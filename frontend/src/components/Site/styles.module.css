@@ -1,15 +1,19 @@
 .root {
+  margin-bottom: 0.5rem;
+}
+
+.info {
   display: flex;
   border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
-  margin-bottom: 0.5rem;
   padding: 0.5rem;
+  cursor: pointer;
 }
 
-.root div {
-  padding-right: 1rem;
+.info:hover {
+  background-color: var(--hover-color);
 }
 
-.id {
-  color: var(--border-color);
+.devices {
+  padding: 0 1rem;
 }

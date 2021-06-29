@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { FC } from 'react'
 import { Site as SiteT } from '../../types'
+import { Devices } from '../Devices/Devices'
 import s from './styles.module.css'
 
 type Props = {
@@ -7,15 +9,21 @@ type Props = {
 }
 
 export const Site: FC<Props> = ({ site }) => {
-  const id = `#${site.id}`
-  const title = site.title
-  const owner = `Owner: ${site.owner}`
+  const [expanded, setExpanded] = useState(false)
+  const title = `#${site.id} ${site.title}`
+
+  const toggle = () => setExpanded(!expanded)
 
   return (
     <div className={s.root}>
-      <div>{id}</div>
-      <div>{title}</div>
-      <div>{owner}</div>
+      <div className={s.info} onClick={toggle}>
+        <div>{title}</div>
+      </div>
+      {expanded && (
+        <div className={s.devices}>
+          <Devices siteId={site.id} />
+        </div>
+      )}
     </div>
   )
 }

@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--hover-color);
+}
+
+.logout {
+  margin-left: 1rem;
+}

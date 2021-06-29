@@ -21,3 +21,14 @@ export type Storage = {
   id: string
   state: string
 }
+
+export type User = {
+  id: number
+  username: string
+  password: string
+}
+
+export type AuthValues = {
+  username: string
+  password: string
+}
